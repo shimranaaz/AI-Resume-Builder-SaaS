@@ -1073,3 +1073,85 @@ Free for personal and commercial use
       .hero-trust { gap: 12px; }
       .trust-divider { display: none; }
     }
+
+@media (max-width: 768px) {
+  .carousel-zoom { padding: 30px 0 0; }
+  .container { padding: 0 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card.tall { grid-row: auto; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .cta-inner { padding: 40px 24px; }
+  .pricing-grid { max-width: 100%; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-float-badge-2 { right: 0; }
+  /* Carousel mobile */
+  .carousel-stage { height: 400px; }
+  :root {
+    --pw: 150px;
+    --gap1: 168px;
+    --gap2: 300px;
+    --gap-hide: 430px;
+  }
+  .phone-card[data-pos="left2"],
+  .phone-card[data-pos="right2"] { opacity: 0.35; }
+
+  /* ---- Reduced section padding: mobile ---- */
+  .hero { padding: 80px 0 60px; }
+  .features-section { padding: 64px 0; }
+  .features-header { margin-bottom: 48px; }
+  .carousel-section { padding: 64px 0; }
+  .stats-section { padding: 48px 0; }
+  .stat-card { padding: 24px 20px; }
+  .pricing-section { padding: 64px 0; }
+  .pricing-header { margin-bottom: 32px; }
+  .pricing-card { padding: 28px 24px; }
+  .testimonials-section { padding: 64px 0; }
+  .testimonials-header { margin-bottom: 40px; }
+  .testimonial-card { padding: 24px; }
+  .integrations-section { padding: 64px 0; }
+  .integrations-header { margin-bottom: 36px; }
+  .faq-section { padding: 64px 0; }
+  .faq-inner { gap: 40px; }
+  .cta-section { padding: 64px 0; }
+  .footer { padding: 48px 0 24px; }
+  .footer-grid { gap: 32px; margin-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .hero-trust { gap: 12px; }
+  .trust-divider { display: none; }
+
+  /* ---- Reduced section padding: small mobile ---- */
+  .hero { padding: 56px 0 40px; }
+  .features-section { padding: 48px 0; }
+  .features-header { margin-bottom: 32px; }
+  .carousel-section { padding: 48px 0; }
+  .stats-section { padding: 32px 0; }
+  .stat-card { padding: 20px 16px; }
+  .pricing-section { padding: 48px 0; }
+  .pricing-card { padding: 22px 18px; }
+  .testimonials-section { padding: 48px 0; }
+  .testimonial-card { padding: 20px; }
+  .integrations-section { padding: 48px 0; }
+  .faq-section { padding: 20px 0; }
+  .cta-section { padding: 48px 0; }
+  .cta-inner { padding: 32px 20px; }
+  .footer { padding: 36px 0 20px; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: auto; }
+  .dashboard-body { padding: 16px; }
+  .ticker-section { padding: 28px 0; }
+  .pricing-toggle { margin-bottom: 32px; }
+  .faq-sidebar .section-sub { margin-bottom: 20px; }
+}
+
+@media (max-width: 480px) {
+  .carousel-stage { height: 320px; }
+  .dashboard-body { padding: 14px; }
+  .ticker-section { padding: 20px 0; }
+}

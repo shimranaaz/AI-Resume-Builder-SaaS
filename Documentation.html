@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume Builder — Documentation</title>
+  <link rel="icon" href="images/favicon-v2.ico" />
+  <meta name="description"
+    content="Complete developer documentation for AI Resume Builder Pro: setup, deployment, integrations, APIs, payments, email workflows, and AI-powered resume generation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ============================================================
+     TOP NAVIGATION
+     ============================================================ -->
+  <header class="topnav">
+    <div class="topnav-inner">
+      <div style="display:flex; align-items:center; gap:18px;">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Toggle sidebar"><i
+            class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand">
+          AI Resume<span class="brand-accent"> Builder Pro</span>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="#introduction">Documentation</a>
+        <a href="#api-endpoints">API Reference</a>
+        <a href="#deployment">Deployment</a>
+        <a href="#faq">FAQ</a>
+        <a href="#footer-contact">Contact Support</a>
+      </nav>
+      <div class="nav-right">
+        <button class="search-btn" id="searchOpenBtn">
+          <i class="fa-solid fa-magnifying-glass"></i> Search docs
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- ============================================================
+       SIDEBAR
+       ============================================================ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-label">Getting Started</div>
+        <a href="#introduction" data-nav><span class="dot"></span>Introduction</a>
+        <a href="#features" data-nav><span class="dot"></span>Features</a>
+        <a href="#tech-stack" data-nav><span class="dot"></span>Tech Stack</a>
+        <a href="#installation" data-nav><span class="dot"></span>Installation</a>
+        <a href="#environment-variables" data-nav><span class="dot"></span>Environment Variables</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Setup</div>
+        <a href="#backend-setup" data-nav><span class="dot"></span>Backend Setup</a>
+        <a href="#frontend-setup" data-nav><span class="dot"></span>Frontend Setup</a>
+        <a href="#database-setup" data-nav><span class="dot"></span>Database Setup</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Integrations</div>
+        <a href="#payment-integration" data-nav><span class="dot"></span>Payment Integration</a>
+        <a href="#ai-integration" data-nav><span class="dot"></span>AI Integration</a>
+        <a href="#email-integration" data-nav><span class="dot"></span>Email Integration</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Ship It</div>
+        <a href="#deployment" data-nav><span class="dot"></span>Deployment</a>
+        <a href="#api-endpoints" data-nav><span class="dot"></span>API Endpoints</a>
+        <a href="#security" data-nav><span class="dot"></span>Security</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">More</div>
+        <a href="#screenshots" data-nav><span class="dot"></span>Screenshots</a>
+        <a href="#faq" data-nav><span class="dot"></span>FAQ</a>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+    <main class="content">
+      <!-- ============================================================
+         HERO / INTRODUCTION
+         ============================================================ -->
+      <section id="introduction" class="doc-section reveal" style="padding-top:24px;">
+        <div class="hero">
+          <div class="hero-badges">
+            <span class="badge badge-glow"><span class="badge-dot"></span>v1.0.0</span>
+            <span class="badge">Last updated: June 18, 2026</span>
+            <button class="btn btn-ghost btn-sm" id="copyDocsBtn"><i class="fa-regular fa-copy"></i> Copy
+              Documentation</button>
+          </div>
+          <h1>AI Resume Builder Pro<br><em>complete developer docs.</em></h1>
+          <p class="lead">Everything you need to set up, integrate, and deploy the platform — installation, environment
+            variables, payments, AI generation, email workflows, and the full API reference.</p>
+          <div class="hero-actions">
+            <a href="#installation" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#api-endpoints" class="btn btn-ghost">View API Reference</a>
+          </div>
+        </div>
+
+        <p class="section-desc" style="max-width:720px; font-size:15px;">
+          AI Resume Builder Pro is a full-stack SaaS platform that helps job seekers generate ATS-optimized resumes
+          using AI.
+          This documentation covers everything needed to install, configure, integrate, and deploy the platform —
+          from local development to production hosting on Netlify and Render.
+        </p>
+
+        <div class="grid grid-3" style="margin-top:28px;">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4>Quick Setup</h4>
+            <p>Get the full stack running locally in under 10 minutes with our guided installation steps.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <h4>Modular Integrations</h4>
+            <p>Plug in MongoDB, Groq AI, Razorpay, and Resend independently — each documented in isolation.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h4>Production Ready</h4>
+            <p>Battle-tested deployment guides for Netlify (frontend) and Render (backend).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         FEATURES
+         ============================================================ -->
+      <section id="features" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-layer-group"></i> Platform Capabilities</div>
+        <h2 class="section-title">Features</h2>
+        <p class="section-desc">Everything built into the platform out of the box — from AI generation to payment
+          handling.</p>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+            <h4>AI Resume Generation</h4>
+            <p>Generate complete, polished resumes from minimal input using the Groq AI engine.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h4>ATS Score Optimization</h4>
+            <p>Analyze and improve resumes against real Applicant Tracking System criteria.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+            <h4>Multiple Resume Templates</h4>
+            <p>A library of professionally designed, recruiter-approved templates to choose from.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <h4>PDF Export</h4>
+            <p>Export pixel-perfect, print-ready resumes as PDF in a single click.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+            <h4>User Authentication</h4>
+            <p>Secure JWT-based authentication with registration, login, and session handling.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-credit-card"></i></div>
+            <h4>Payment Gateway</h4>
+            <p>Integrated Razorpay checkout for one-time and subscription-based payments.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <h4>Resume History</h4>
+            <p>Every version of every resume is saved and retrievable from the user dashboard.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h4>Email Notifications</h4>
+            <p>Transactional emails for signups, payments, and resume milestones via Resend.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-chart-column"></i></div>
+            <h4>Dashboard Analytics</h4>
+            <p>At-a-glance metrics on resumes created, scores, and account activity.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h4>Responsive Design</h4>
+            <p>A fully responsive interface that works seamlessly across desktop, tablet, and mobile.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         TECH STACK
+         ============================================================ -->
+      <section id="tech-stack" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-microchip"></i> Under The Hood</div>
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-desc">A modern, production-grade stack chosen for speed, reliability, and developer
+          experience.</p>
+
+        <div class="stack-group-title">Frontend</div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="fa-brands fa-react"></i></div>
+            <h4>React</h4>
+            <p>Component-based UI library powering the entire client application.</p><span
+              class="card-version">v18.3</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-brands fa-square-js"></i></div>
+            <h4>TypeScript</h4>
+            <p>Static typing across the frontend codebase for safer, scalable code.</p><span
+              class="card-version">v5.4</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+            <h4>Tailwind CSS</h4>
+            <p>Utility-first styling for rapid, consistent UI development.</p><span class="card-version">v3.4</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4>Vite</h4>
+            <p>Lightning-fast dev server and optimized production bundler.</p><span class="card-version">v5.2</span>
+          </div>
+        </div>
+
+        <div class="stack-group-title">Backend</div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="fa-brands fa-node-js"></i></div>
+            <h4>Node.js</h4>
+            <p>JavaScript runtime powering the backend API server.</p><span class="card-version">v20 LTS</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-train"></i></div>
+            <h4>Express.js</h4>
+            <p>Minimal, flexible routing and middleware framework for the REST API.</p><span
+              class="card-version">v4.19</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h4>MongoDB</h4>
+            <p>NoSQL document database storing users, resumes, and transactions.</p><span
+              class="card-version">v7.0</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+            <h4>JWT Authentication</h4>
+            <p>Stateless, signed tokens securing every authenticated API request.</p><span
+              class="card-version">jsonwebtoken 9.x</span>
+          </div>
+        </div>
+
+        <div class="stack-group-title">AI Services</div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h4>Groq API</h4>
+            <p>Ultra-low-latency LLM inference powering resume generation and scoring.</p><span class="card-version">v1
+              API</span>
+          </div>
+        </div>
+
+        <div class="stack-group-title">Payments</div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+            <h4>Razorpay</h4>
+            <p>Payment gateway handling checkout, orders, and webhook verification.</p><span class="card-version">v2
+              API</span>
+          </div>
+        </div>
+
+        <div class="stack-group-title">Email Services</div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-paper-plane"></i></div>
+            <h4>Resend Webhooks</h4>
+            <p>Modern transactional email delivery with webhook-based event tracking.</p><span class="card-version">v3
+              API</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-inbox"></i></div>
+            <h4>SMTP Mail Service</h4>
+            <p>Fallback Gmail SMTP relay for direct transactional email sending.</p><span
+              class="card-version">Nodemailer 6.x</span>
+          </div>
+        </div>
+
+        <div class="stack-group-title">Hosting</div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+            <h4>Netlify</h4>
+            <p>Hosts the static frontend build with continuous deployment from GitHub.</p><span
+              class="card-version">Edge CDN</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
+            <h4>Render</h4>
+            <p>Hosts the Node.js backend API as a managed web service.</p><span class="card-version">Web Service</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         INSTALLATION
+         ============================================================ -->
+      <section id="installation" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-laptop-code"></i> Local Development</div>
+        <h2 class="section-title">Installation</h2>
+        <p class="section-desc">Clone the repository and get the project running locally in three commands.</p>
+
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">terminal — install dependencies</span>
+            <button class="copy-btn" data-copy="npm install"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-comment"># Install all project dependencies</span>
+<span class="tok-fn">npm</span> install</code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">terminal — start dev server</span>
+            <button class="copy-btn" data-copy="npm run dev"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-comment"># Start the local development server</span>
+<span class="tok-fn">npm</span> run dev</code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">terminal — production build</span>
+            <button class="copy-btn" data-copy="npm run build"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-comment"># Create an optimized production build</span>
+<span class="tok-fn">npm</span> run build</code></pre>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         ENVIRONMENT VARIABLES (BACKEND + FRONTEND)
+         ============================================================ -->
+      <section id="environment-variables" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-sliders"></i> Configuration</div>
+        <h2 class="section-title">Environment Variables</h2>
+        <p class="section-desc">Configure backend and frontend environments before running the application.</p>
+
+        <h3 style="font-size:17px; margin-top:8px; margin-bottom:6px; color:var(--text-0);">Backend (.env)</h3>
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">backend/.env</span>
+            <button class="copy-btn" data-copy="PORT=5000
+JWT_SECRET=your_jwt_secret
+MONGODB_URI=your_mongodb_uri
+IMAGEKIT_PRIVATE_KEY=your_imagekit_private_key
+GROQ_API_KEY=your_groq_api_key
+
+GMAIL_SMTP_HOST=
+GMAIL_SMTP_PORT=
+GMAIL_SMTP_USER=
+GMAIL_SMTP_PASS=
+GMAIL_SENDER_NAME=
+
+RESEND_API_KEY=
+
+RAZORPAY_KEY_ID=
+RAZORPAY_KEY_SECRET=
+RAZORPAY_WEBHOOK_SECRET="><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-key">PORT</span><span class="tok-punc">=</span><span class="tok-num">5000</span>
+<span class="tok-key">JWT_SECRET</span><span class="tok-punc">=</span><span class="tok-str">your_jwt_secret</span>
+<span class="tok-key">MONGODB_URI</span><span class="tok-punc">=</span><span class="tok-str">your_mongodb_uri</span>
+<span class="tok-key">IMAGEKIT_PRIVATE_KEY</span><span class="tok-punc">=</span><span class="tok-str">your_imagekit_private_key</span>
+<span class="tok-key">GROQ_API_KEY</span><span class="tok-punc">=</span><span class="tok-str">your_groq_api_key</span>
+
+<span class="tok-comment"># Gmail SMTP fallback</span>
+<span class="tok-key">GMAIL_SMTP_HOST</span><span class="tok-punc">=</span>
+<span class="tok-key">GMAIL_SMTP_PORT</span><span class="tok-punc">=</span>
+<span class="tok-key">GMAIL_SMTP_USER</span><span class="tok-punc">=</span>
+<span class="tok-key">GMAIL_SMTP_PASS</span><span class="tok-punc">=</span>
+<span class="tok-key">GMAIL_SENDER_NAME</span><span class="tok-punc">=</span>
+
+<span class="tok-comment"># Resend transactional email</span>
+<span class="tok-key">RESEND_API_KEY</span><span class="tok-punc">=</span>
+
+<span class="tok-comment"># Razorpay payment gateway</span>
+<span class="tok-key">RAZORPAY_KEY_ID</span><span class="tok-punc">=</span>
+<span class="tok-key">RAZORPAY_KEY_SECRET</span><span class="tok-punc">=</span>
+<span class="tok-key">RAZORPAY_WEBHOOK_SECRET</span><span class="tok-punc">=</span></code></pre>
+        </div>
+
+        <div class="alert">
+          <span class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+          <div><strong>Never commit .env files to GitHub.</strong>
+            <p>Add <code>.env</code> to your <code>.gitignore</code> before your first commit. Leaked secrets should be
+              rotated immediately.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:17px; margin-top:36px; margin-bottom:6px; color:var(--text-0);">Frontend (.env)</h3>
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">frontend/.env</span>
+            <button class="copy-btn" data-copy="VITE_BASE_URL=
+VITE_RAZORPAY_KEY_ID="><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-key">VITE_BASE_URL</span><span class="tok-punc">=</span>
+<span class="tok-key">VITE_RAZORPAY_KEY_ID</span><span class="tok-punc">=</span></code></pre>
+        </div>
+
+        <div class="env-table">
+          <div class="env-row">
+            <span class="env-key">VITE_BASE_URL</span>
+            <span class="env-desc">The base URL of your deployed backend API (e.g.
+              <code>https://api.yourapp.com</code>). Used for all frontend HTTP requests.</span>
+          </div>
+          <div class="env-row">
+            <span class="env-key">VITE_RAZORPAY_KEY_ID</span>
+            <span class="env-desc">Your public Razorpay Key ID, used client-side to initialize the checkout widget. The
+              secret key stays on the backend only.</span>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================================
+         BACKEND SETUP
+         ============================================================ -->
+      <section id="backend-setup" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-server"></i> Server</div>
+        <h2 class="section-title">Backend Setup</h2>
+        <p class="section-desc">Spin up the Express API server that powers authentication, resumes, payments, and AI
+          generation.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div class="timeline-body">
+              <h4>Navigate to the backend directory</h4>
+              <p>Run <code>cd backend</code> from the project root.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">2</div>
+            <div class="timeline-body">
+              <h4>Install dependencies</h4>
+              <p>Run <code>npm install</code> to install Express, Mongoose, JWT, and other backend packages.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">3</div>
+            <div class="timeline-body">
+              <h4>Configure environment variables</h4>
+              <p>Create a <code>.env</code> file using the template from the Environment Variables section above.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">4</div>
+            <div class="timeline-body">
+              <h4>Start the server</h4>
+              <p>Run <code>npm run dev</code> to start the API with hot-reloading on <code>PORT</code> (default 5000).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         FRONTEND SETUP
+         ============================================================ -->
+      <section id="frontend-setup" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-display"></i> Client</div>
+        <h2 class="section-title">Frontend Setup</h2>
+        <p class="section-desc">Configure and run the React + Vite client application.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div class="timeline-body">
+              <h4>Navigate to the frontend directory</h4>
+              <p>Run <code>cd frontend</code> from the project root.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">2</div>
+            <div class="timeline-body">
+              <h4>Install dependencies</h4>
+              <p>Run <code>npm install</code> to install React, Tailwind, and supporting libraries.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">3</div>
+            <div class="timeline-body">
+              <h4>Point to your backend</h4>
+              <p>Set <code>VITE_BASE_URL</code> in your <code>.env</code> to your running backend API URL.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">4</div>
+            <div class="timeline-body">
+              <h4>Start the dev server</h4>
+              <p>Run <code>npm run dev</code> and open the printed local URL in your browser.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         DATABASE SETUP (MONGODB)
+         ============================================================ -->
+      <section id="database-setup" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-database"></i> Storage</div>
+        <h2 class="section-title">Database Setup — MongoDB Atlas</h2>
+        <p class="section-desc">Provision a free MongoDB Atlas cluster and connect it to your backend.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div class="timeline-body">
+              <h4>Create a MongoDB Atlas account</h4>
+              <p>Sign up for a free account at the MongoDB Atlas website.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">2</div>
+            <div class="timeline-body">
+              <h4>Create a cluster</h4>
+              <p>Choose the free shared tier (M0) and select a region close to your backend host.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">3</div>
+            <div class="timeline-body">
+              <h4>Create a database user</h4>
+              <p>Under Database Access, create a username and password with read/write permissions.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">4</div>
+            <div class="timeline-body">
+              <h4>Whitelist your IP address</h4>
+              <p>Under Network Access, add your current IP — or <code>0.0.0.0/0</code> for development.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">5</div>
+            <div class="timeline-body">
+              <h4>Get your connection string</h4>
+              <p>Click "Connect" on your cluster and copy the provided URI string.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">6</div>
+            <div class="timeline-body">
+              <h4>Add MONGODB_URI</h4>
+              <p>Paste the connection string into your backend <code>.env</code> file as <code>MONGODB_URI</code>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         PAYMENT INTEGRATION (RAZORPAY)
+         ============================================================ -->
+      <section id="payment-integration" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-credit-card"></i> Billing</div>
+        <h2 class="section-title">Payment Integration — Razorpay</h2>
+        <p class="section-desc">How a purchase flows from checkout to premium access activation.</p>
+
+        <div class="flow">
+          <div class="flow-node">User Purchase</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Checkout Open</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Payment Success</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Webhook Verification</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node accent">Premium Access Activated</div>
+        </div>
+
+        <div class="alert info">
+          <span class="alert-icon"><i class="fa-solid fa-lock"></i></span>
+          <div><strong>Security note</strong>
+            <p>Every Razorpay webhook payload is verified against <code>RAZORPAY_WEBHOOK_SECRET</code> using an HMAC
+              signature before access is granted. Never activate premium access on the client-side success callback
+              alone — always wait for server-side webhook confirmation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         AI INTEGRATION (GROQ)
+         ============================================================ -->
+      <section id="ai-integration" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-brain"></i> Intelligence Layer</div>
+        <h2 class="section-title">AI Integration — Groq</h2>
+        <p class="section-desc">Resume content is generated by routing structured prompts through the Groq inference
+          API.</p>
+
+        <div class="flow">
+          <div class="flow-node">Frontend</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Backend API</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node accent">Groq AI</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Resume Generation</div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">Sample Request — POST /api/ai/generate</span>
+            <button class="copy-btn" data-copy='{
+  "role": "Frontend Developer",
+  "experience": "3 years",
+  "skills": ["React", "TypeScript", "Node.js"]
+}'><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"role"</span><span class="tok-punc">:</span> <span class="tok-str">"Frontend Developer"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"experience"</span><span class="tok-punc">:</span> <span class="tok-str">"3 years"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"skills"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"React"</span><span class="tok-punc">,</span> <span class="tok-str">"TypeScript"</span><span class="tok-punc">,</span> <span class="tok-str">"Node.js"</span><span class="tok-punc">]</span>
+<span class="tok-punc">}</span></code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-head">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-label">Sample Response</span>
+            <button class="copy-btn" data-copy='{
+  "summary": "Frontend developer with 3 years of experience...",
+  "bulletPoints": [
+    "Built reusable React component library used across 5 products",
+    "Reduced bundle size by 35% through code-splitting"
+  ],
+  "atsScore": 87
+}'><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code><span class="tok-punc">{</span>
+  <span class="tok-key">"summary"</span><span class="tok-punc">:</span> <span class="tok-str">"Frontend developer with 3 years of experience..."</span><span class="tok-punc">,</span>
+  <span class="tok-key">"bulletPoints"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span>
+    <span class="tok-str">"Built reusable React component library used across 5 products"</span><span class="tok-punc">,</span>
+    <span class="tok-str">"Reduced bundle size by 35% through code-splitting"</span>
+  <span class="tok-punc">]</span><span class="tok-punc">,</span>
+  <span class="tok-key">"atsScore"</span><span class="tok-punc">:</span> <span class="tok-num">87</span>
+<span class="tok-punc">}</span></code></pre>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         EMAIL INTEGRATION (RESEND)
+         ============================================================ -->
+      <section id="email-integration" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-bell"></i> Notifications</div>
+        <h2 class="section-title">Email Integration — Resend</h2>
+        <p class="section-desc">Transactional emails are dispatched through Resend whenever a tracked backend event
+          occurs.</p>
+
+        <div class="flow">
+          <div class="flow-node">User Action</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Backend Event</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node accent">Resend API</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-node">Email Delivery</div>
+        </div>
+
+        <div class="alert info">
+          <span class="alert-icon"><i class="fa-solid fa-rotate"></i></span>
+          <div><strong>Webhook delivery tracking</strong>
+            <p>Resend sends delivery, bounce, and open events back to a registered webhook endpoint, allowing the
+              backend to log email status against each user record in real time.</p>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================================
+         DEPLOYMENT
+         ============================================================ -->
+      <section id="deployment" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-rocket"></i> Going Live</div>
+        <h2 class="section-title">Deployment</h2>
+        <p class="section-desc">Deploy the frontend to Netlify and the backend to Render.</p>
+
+        <div class="grid grid-2">
+          <div class="card" style="padding:28px;">
+            <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+            <h4 style="font-size:17px; margin-bottom:14px;">Netlify Deployment</h4>
+            <div class="timeline" style="margin-top:0;">
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">1</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Connect your GitHub repository</p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">2</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Build command: <code>npm run build</code></p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">3</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Publish directory: <code>dist</code></p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">4</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Add environment variables in Site Settings</p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:0;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">5</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Deploy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:28px;">
+            <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
+            <h4 style="font-size:17px; margin-bottom:14px;">Render Deployment</h4>
+            <div class="timeline" style="margin-top:0;">
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">1</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Connect your GitHub repository</p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">2</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Set the root directory to <code>backend</code></p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">3</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Build command: <code>npm install</code></p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">4</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Start command: <code>npm start</code></p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:18px;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">5</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Add environment variables in the dashboard</p>
+                </div>
+              </div>
+              <div class="timeline-item" style="padding-bottom:0;">
+                <div class="timeline-num" style="width:30px; height:30px; font-size:12px;">6</div>
+                <div class="timeline-body">
+                  <p style="color:var(--text-1);">Deploy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         API ENDPOINTS
+         ============================================================ -->
+      <section id="api-endpoints" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-book"></i> Reference</div>
+        <h2 class="section-title">API Endpoints</h2>
+        <p class="section-desc">All routes are prefixed with your deployed backend's base URL.</p>
+
+        <div class="api-group">
+          <div class="api-group-title"><i class="fa-solid fa-lock"></i> Authentication</div>
+          <div class="api-row"><span class="method post">POST</span><span class="api-path">/api/auth/register</span>
+          </div>
+          <div class="api-row"><span class="method post">POST</span><span class="api-path">/api/auth/login</span></div>
+          <div class="api-row"><span class="method post">POST</span><span class="api-path">/api/auth/logout</span></div>
+        </div>
+
+        <div class="api-group">
+          <div class="api-group-title"><i class="fa-solid fa-file-lines"></i> Resume</div>
+          <div class="api-row"><span class="method get">GET</span><span class="api-path">/api/resume</span></div>
+          <div class="api-row"><span class="method post">POST</span><span class="api-path">/api/resume/create</span>
+          </div>
+          <div class="api-row"><span class="method put">PUT</span><span class="api-path">/api/resume/update</span></div>
+          <div class="api-row"><span class="method delete">DELETE</span><span class="api-path">/api/resume/delete</span>
+          </div>
+        </div>
+
+        <div class="api-group">
+          <div class="api-group-title"><i class="fa-solid fa-credit-card"></i> Payment</div>
+          <div class="api-row"><span class="method post">POST</span><span
+              class="api-path">/api/payment/create-order</span></div>
+          <div class="api-row"><span class="method post">POST</span><span class="api-path">/api/payment/verify</span>
+          </div>
+        </div>
+
+        <div class="api-group">
+          <div class="api-group-title"><i class="fa-solid fa-robot"></i> AI</div>
+          <div class="api-row"><span class="method post">POST</span><span class="api-path">/api/ai/generate</span></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         SECURITY
+         ============================================================ -->
+      <section id="security" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-shield-halved"></i> Trust</div>
+        <h2 class="section-title">Security</h2>
+        <p class="section-desc">Measures built into the platform to protect user data and transactions.</p>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+            <h4>JWT Authentication</h4>
+            <p>Signed, stateless tokens validate every authenticated request to the API.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4>Password Hashing</h4>
+            <p>User passwords are hashed with bcrypt before being stored — never stored in plain text.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>Razorpay Signature Verification</h4>
+            <p>All payment webhooks are validated against an HMAC signature before access is granted.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+            <h4>Environment Variable Protection</h4>
+            <p>Secrets live only in <code>.env</code> files, excluded from version control via <code>.gitignore</code>.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-road-barrier"></i></div>
+            <h4>Secure API Access</h4>
+            <p>Protected routes require a valid bearer token; rate limiting guards against abuse.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+            <h4>HTTPS Deployment</h4>
+            <p>Both Netlify and Render serve traffic over HTTPS by default, with automatic certificate management.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     SCREENSHOTS
+     ============================================================ -->
+      <section id="screenshots" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-images"></i> Visual Tour</div>
+        <h2 class="section-title">Screenshots</h2>
+        <p class="section-desc">A look at the core screens of the platform. Click any preview to expand.</p>
+
+        <div class="grid grid-3">
+
+          <div class="shot-card" data-lightbox-title="Landing Page" data-lightbox-img="images/full-desktop-view.png">
+            <div class="browser-bar">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="browser-url">app.airesumebuilderpro.com</span>
+            </div>
+            <img src="images/full-desktop-view.png" alt="Landing Page">
+          </div>
+
+          <div class="shot-card" data-lightbox-title="User Dashboard" data-lightbox-img="images/user.png">
+            <div class="browser-bar">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="browser-url">app.airesumebuilderpro.com/dashboard</span>
+            </div>
+            <img src="images/user.png" alt="Dashboard">
+          </div>
+
+          <div class="shot-card" data-lightbox-title="Resume Builder" data-lightbox-img="images/ATS-optimization.png">
+            <div class="browser-bar">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="browser-url">app.airesumebuilderpro.com/builder</span>
+            </div>
+            <img src="images/ATS-optimization.png" alt="Resume Builder">
+          </div>
+
+          <div class="shot-card" data-lightbox-title="Sales Panel" data-lightbox-img="images/sales.png">
+            <div class="browser-bar">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="browser-url">app.airesumebuilderpro.com/checkout</span>
+            </div>
+            <img src="images/sales.png" alt="Payment Page">
+          </div>
+
+          <div class="shot-card" data-lightbox-title="Admin Panel" data-lightbox-img="images/admin.png">
+            <div class="browser-bar">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="browser-url">app.airesumebuilderpro.com/admin</span>
+            </div>
+            <img src="images/admin.png" alt="Admin Panel">
+          </div>
+
+        </div>
+      </section>
+      <!-- ============================================================
+         FAQ
+         ============================================================ -->
+      <section id="faq" class="doc-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-circle-question"></i> Common Questions</div>
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-desc">Answers to the questions developers ask most often.</p>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="acc-item">
+            <button class="acc-trigger">How does resume generation work?<span class="plus">+</span></button>
+            <div class="acc-panel">
+              <div class="acc-panel-inner">The frontend sends structured profile data to <code>/api/ai/generate</code>,
+                which forwards a prompt to the Groq API. The response is parsed into resume sections and returned to the
+                client for rendering and editing.</div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger">How are payments verified?<span class="plus">+</span></button>
+            <div class="acc-panel">
+              <div class="acc-panel-inner">After checkout, Razorpay sends a webhook to the backend. The backend verifies
+                the payload signature using <code>RAZORPAY_WEBHOOK_SECRET</code> before activating premium access —
+                client-side confirmation alone is never trusted.</div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger">How is data stored?<span class="plus">+</span></button>
+            <div class="acc-panel">
+              <div class="acc-panel-inner">All user, resume, and transaction data is stored in MongoDB Atlas. Passwords
+                are hashed with bcrypt; resumes are stored as structured documents linked to the owning user.</div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger">Can I deploy on another platform?<span class="plus">+</span></button>
+            <div class="acc-panel">
+              <div class="acc-panel-inner">Yes. The frontend is a static Vite build deployable to any static host, and
+                the backend is a standard Node.js/Express app deployable to any Node-compatible host.</div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger">How do I change AI providers?<span class="plus">+</span></button>
+            <div class="acc-panel">
+              <div class="acc-panel-inner">AI calls are isolated in a single service module on the backend. Swap the
+                Groq client and request/response mapping in that module to point at a different provider.</div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger">How do I customize templates?<span class="plus">+</span></button>
+            <div class="acc-panel">
+              <div class="acc-panel-inner">Resume templates live in the frontend's templates directory as individual
+                React components. Duplicate an existing template component and adjust the layout and styling to create a
+                new one.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ============================================================
+     FOOTER — matches landing page footer structure & logo
+     ============================================================ -->
+  <footer class="footer" id="footer-contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#introduction" class="nav-logo">AI Resume<span> Builder Pro</span></a>
+          <p class="footer-brand-desc">Complete developer documentation for AI Resume Builder Pro — setup, deployment,
+            integrations, payments, AI generation, and the full API reference.</p>
+          <div style="margin:14px 0 16px;display:flex;flex-direction:column;gap:8px;">
+            <a href="mailto:info.careerblurprint@gmail.com" class="footer-contact-link"><i
+                class="fa-solid fa-envelope"></i>info.careerblurprint@gmail.com</a>
+            <a href="https://wa.me/918124494755" target="_blank" class="footer-contact-link"><i
+                class="fa-solid fa-mobile-screen"></i>8124494755</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Documentation</div>
+          <div class="footer-links">
+            <a href="#introduction">Introduction</a>
+            <a href="#features">Features</a>
+            <a href="#tech-stack">Tech Stack</a>
+            <a href="#installation">Installation</a>
+            <a href="#environment-variables">Environment Variables</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Build &amp; Ship</div>
+          <div class="footer-links">
+            <a href="#payment-integration">Payment Integration</a>
+            <a href="#ai-integration">AI Integration</a>
+            <a href="#deployment">Deployment</a>
+            <a href="#api-endpoints">API Reference</a>
+            <a href="#security">Security</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Support</div>
+          <div class="footer-links">
+            <a href="#faq">FAQ</a>
+            <a href="#screenshots">Screenshots</a>
+            <a href="mailto:info.careerblurprint@gmail.com">Contact Support</a>
+            <a href="https://ai-resume-builder-pro.netlify.app/" target="_blank">Live Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 AI Resume Builder Pro. All rights reserved. | Documentation v1.0.0</div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+     SEARCH MODAL
+     ============================================================ -->
+  <div class="modal-overlay" id="searchOverlay">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--text-3);"></i>
+        <input type="text" id="searchInput" placeholder="Search documentation..." autocomplete="off">
+        <span class="search-kbd">Esc</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-box" id="lightboxBox"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxBox = document.getElementById('lightboxBox');
+      const closeBtn = document.getElementById('lightboxClose');
+
+      document.querySelectorAll('.shot-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          var imgSrc = card.getAttribute('data-lightbox-img');
+          var title = card.getAttribute('data-lightbox-title');
+
+          lightboxBox.innerHTML =
+            '<div class="lightbox-box-title">' + title + '</div>' +
+            '<img src="' + imgSrc + '" alt="' + title + '">';
+
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+          lightboxBox.innerHTML = '';
+        });
+      }
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+          lightboxBox.innerHTML = '';
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+          lightboxBox.innerHTML = '';
+        }
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
