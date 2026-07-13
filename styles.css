@@ -1,5 +1,5 @@
 /* ============================================================
-   AI RESUME BUILDER PRO — DOCUMENTATION
+   RESUME BUILDER PRO — DOCUMENTATION
    Theme: Clearwave (seafoam / deep teal, light mode)
    Matches: ai-resume-builder-pro-saas.netlify.app
    ============================================================ */
@@ -649,4 +649,16 @@ em{font-style:italic; color:var(--accent); font-family:var(--font-display); font
   .hero{padding:28px 0 20px;}
   .card{padding:14px;}
   .footer{padding:36px 0 20px;}
+}
+
+.browser-bar {
+  flex-wrap: nowrap;
+}
+
+.browser-url {
+  font-size: 11px;        /* smaller text */
+  white-space: nowrap;    /* prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
